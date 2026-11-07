@@ -1,0 +1,48 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends iverilog gcc-riscv64-unknown-elf
+          python -m pip install yowasp-yosys==0.70.0.0.post1259
+          iverilog -V 2>&1 | head -1
+          riscv64-unknown-elf-gcc --version | head -1
+          yowasp-yosys -V
+
+      - name: Firmware
+        run: make fw
+
+      - name: Simulation (MAC peripheral + full SoC in 3 configurations)
+        run: make -j4 sim
+
+      - name: Synthesis
+        run: make synth YOSYS=yowasp-yosys
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs
+          path: |
+            build/*.log
+            build/*.tmp
+            build/*.txt
+            build/synth_summary.md
+            build/firmware.lst
+            build/firmware.map

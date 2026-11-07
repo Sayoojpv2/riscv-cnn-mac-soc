@@ -1,0 +1,5 @@
+tb_mac_axil: 73164 AXI writes, 935 AXI reads, 72938 samples
+  write orderings AW-first/W-first/same-cycle: 2339/2434/68389
+  B backpressure: 4837 writes, R backpressure: 632 reads, RESULT interlock wait cycles: 78
+  model mismatches: 0, AXI protocol violations: 0
+SIM RESULT: PASS

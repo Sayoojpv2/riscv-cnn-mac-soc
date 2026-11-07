@@ -1,0 +1,327 @@
+
+11. Printing statistics.
+
+=== mac_axil ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      247 wires
+      580 wire bits
+       39 public wires
+      327 public wire bits
+       19 ports
+      148 port bits
+      282 cells
+       16   $_ANDNOT_
+       77   $_AND_
+        1   $_MUX_
+       81   $_NAND_
+       28   $_NOR_
+       17   $_NOT_
+        3   $_ORNOT_
+       20   $_OR_
+        1   $_SDFFE_PN0P_
+       15   $_SDFFE_PP0P_
+        8   $_SDFF_PN0_
+       13   $_XNOR_
+        2   $_XOR_
+        2 submodules
+        1   $paramod\axil_slave\AW=s32'00000000000000000000000000001100
+        1   mac_opiso
+
+=== mac_opiso ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      690 wires
+     1030 wire bits
+       18 public wires
+       92 public wire bits
+        8 ports
+       45 port bits
+      843 cells
+       26   $_ANDNOT_
+      145   $_AND_
+        2   $_MUX_
+      301   $_NAND_
+        8   $_NOR_
+        1   $_NOT_
+        2   $_ORNOT_
+       56   $_OR_
+       40   $_SDFFE_PN0P_
+       27   $_SDFF_PN0_
+       62   $_XNOR_
+      173   $_XOR_
+
+=== $paramod$d55483bbc8b50bec6beb4e4890bfa628e0a67c83\axil_decoder ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      374 wires
+      785 wire bits
+       45 public wires
+      456 public wire bits
+       36 ports
+      432 port bits
+      414 cells
+       13   $_ANDNOT_
+      151   $_AND_
+       41   $_MUX_
+      117   $_NAND_
+       26   $_NOR_
+        4   $_NOT_
+       39   $_ORNOT_
+       12   $_OR_
+        8   $_SDFFE_PN0P_
+        3   $_SDFFE_PP0P_
+
+=== $paramod\uart_axil\CLKS_PER_BIT=s32'00000000000000000000000000010000 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      180 wires
+      419 wire bits
+       31 public wires
+      261 public wire bits
+       20 ports
+      149 port bits
+      202 cells
+       30   $_ANDNOT_
+       64   $_AND_
+        8   $_MUX_
+       11   $_NAND_
+       12   $_NOR_
+        6   $_NOT_
+        5   $_ORNOT_
+       15   $_OR_
+       38   $_SDFFE_PN0P_
+        9   $_SDFFE_PN1P_
+        2   $_SDFFE_PP0P_
+        1   $_XNOR_
+        1   $_XOR_
+        1 submodules
+        1   $paramod\axil_slave\AW=s32'00000000000000000000000000001100
+
+=== $paramod\axil_slave\AW=s32'00000000000000000000000000001100 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       60 wires
+      292 wire bits
+       37 public wires
+      269 public wire bits
+       30 ports
+      206 port bits
+      187 cells
+        7   $_ANDNOT_
+        9   $_AND_
+       92   $_DFFE_PP_
+       60   $_MUX_
+        5   $_NOT_
+        1   $_ORNOT_
+        6   $_OR_
+        3   $_SDFFE_PN0P_
+        4   $_SDFFE_PP0P_
+
+=== picorv32_axi_adapter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       43 wires
+      270 wire bits
+       30 public wires
+      257 public wire bits
+       26 ports
+      253 port bits
+       23 cells
+        4   $_ANDNOT_
+        7   $_AND_
+        1   $_DFFE_PP_
+        1   $_NAND_
+        2   $_NOR_
+        2   $_ORNOT_
+        3   $_OR_
+        2   $_SDFFCE_PP0P_
+        1   $_SDFFE_PP0P_
+
+=== $paramod$ff40f8c7c36da603fda8789f0917036b24500bf9\picorv32 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     6590 wires
+     9719 wire bits
+      190 public wires
+     2437 public wire bits
+       27 ports
+      409 port bits
+     8834 cells
+      227   $_ANDNOT_
+     1552   $_AND_
+        4   $_DFFE_PN_
+     1266   $_DFFE_PP_
+       87   $_DFF_P_
+     2299   $_MUX_
+     1347   $_NAND_
+      236   $_NOR_
+       86   $_NOT_
+      300   $_ORNOT_
+      735   $_OR_
+       36   $_SDFFCE_PN0P_
+        4   $_SDFFCE_PP0P_
+      156   $_SDFFE_PN0P_
+        4   $_SDFFE_PN1P_
+        1   $_SDFFE_PP0P_
+        3   $_SDFFE_PP1P_
+       67   $_SDFF_PN0_
+        1   $_SDFF_PP0_
+       41   $_XNOR_
+      382   $_XOR_
+        2 submodules
+        1   picorv32_pcpi_div
+        1   picorv32_pcpi_fast_mul
+
+=== picorv32_pcpi_div ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     1041 wires
+     1723 wire bits
+       22 public wires
+      301 public wire bits
+       10 ports
+      134 port bits
+     1438 cells
+       21   $_ANDNOT_
+      305   $_AND_
+       64   $_DFFE_PP_
+       34   $_DFF_P_
+      131   $_MUX_
+      224   $_NAND_
+       43   $_NOR_
+      130   $_NOT_
+        3   $_ORNOT_
+      201   $_OR_
+        1   $_SDFFCE_PN0P_
+       94   $_SDFFCE_PP0P_
+        1   $_SDFFCE_PP1P_
+        1   $_SDFFE_PN0P_
+        4   $_SDFF_PN0_
+        1   $_SDFF_PP0_
+       54   $_XNOR_
+      126   $_XOR_
+
+=== picorv32_pcpi_fast_mul ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     6326 wires
+    12246 wire bits
+       20 public wires
+      272 public wire bits
+       10 ports
+      134 port bits
+     7609 cells
+       61   $_ANDNOT_
+     1511   $_AND_
+       64   $_DFFE_PP_
+       65   $_DFF_P_
+       40   $_MUX_
+     2883   $_NAND_
+       22   $_NOR_
+       43   $_NOT_
+        7   $_ORNOT_
+      414   $_OR_
+        2   $_SDFFCE_PN0P_
+        2   $_SDFF_PN0_
+      598   $_XNOR_
+     1897   $_XOR_
+
+=== soc_top ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       40 wires
+      440 wire bits
+       40 public wires
+      440 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   axil_mem
+        4 submodules
+        1   $paramod$4fa8aa52aa13065e3c508a8fccc96c9f740af56e\picorv32_axi
+        1   $paramod$d55483bbc8b50bec6beb4e4890bfa628e0a67c83\axil_decoder
+        1   $paramod\uart_axil\CLKS_PER_BIT=s32'00000000000000000000000000010000
+        1   mac_axil
+
+=== $paramod$4fa8aa52aa13065e3c508a8fccc96c9f740af56e\picorv32_axi ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       39 wires
+      487 wire bits
+       39 public wires
+      487 public wire bits
+       32 ports
+      384 port bits
+        2 submodules
+        1   $paramod$ff40f8c7c36da603fda8789f0917036b24500bf9\picorv32
+        1   picorv32_axi_adapter
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+    20021 soc_top
+     8834   $paramod$ff40f8c7c36da603fda8789f0917036b24500bf9\picorv32
+     1438     picorv32_pcpi_div
+     7609     picorv32_pcpi_fast_mul
+       23   picorv32_axi_adapter
+      414 $paramod$d55483bbc8b50bec6beb4e4890bfa628e0a67c83\axil_decoder
+      202 $paramod\uart_axil\CLKS_PER_BIT=s32'00000000000000000000000000010000
+      187   $paramod\axil_slave\AW=s32'00000000000000000000000000001100
+      282 mac_axil
+      187   $paramod\axil_slave\AW=s32'00000000000000000000000000001100
+      843   mac_opiso
+
+        +----------Count including submodules.
+        | 
+    15690 wires
+    28283 wire bits
+      548 public wires
+     5868 public wire bits
+      252 ports
+     2504 port bits
+        - memories
+        - memory bits
+        - processes
+    20021 cells
+      412   $_ANDNOT_
+     3830   $_AND_
+        4   $_DFFE_PN_
+     1579   $_DFFE_PP_
+      186   $_DFF_P_
+     2642   $_MUX_
+     4965   $_NAND_
+      377   $_NOR_
+      297   $_NOT_
+      363   $_ORNOT_
+     1468   $_OR_
+       39   $_SDFFCE_PN0P_
+      100   $_SDFFCE_PP0P_
+        1   $_SDFFCE_PP1P_
+      250   $_SDFFE_PN0P_
+       13   $_SDFFE_PN1P_
+       30   $_SDFFE_PP0P_
+        3   $_SDFFE_PP1P_
+      108   $_SDFF_PN0_
+        2   $_SDFF_PP0_
+      769   $_XNOR_
+     2581   $_XOR_
+        2   axil_mem
+        4 submodules
+        1   $paramod$4fa8aa52aa13065e3c508a8fccc96c9f740af56e\picorv32_axi
+        1   $paramod$d55483bbc8b50bec6beb4e4890bfa628e0a67c83\axil_decoder
+        1   $paramod\uart_axil\CLKS_PER_BIT=s32'00000000000000000000000000010000
+        1   mac_axil
+

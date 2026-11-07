@@ -1,0 +1,39 @@
+
+riscv-cnn-mac-soc: PicoRV32 RV32IM + operand-isolated CNN MAC
+self-test
+  memory/bus: ok
+  mac arithmetic: ok
+  mac error handling: ok
+5x5 convolution, 28x28 input -> 24x24 outputs, 14400 MACs
+  accelerator status after run: ok
+  sw vs reference mismatches: 0
+  hw vs reference mismatches: 0
+  sw vs hw mismatches: 0
+  out[0], out[mid], out[last]: 376136, 0, -376832
+  checksum: 0x590ab097
+cycles (rdcycle)
+  software conv : 802789  (1393 per output)
+  hardware conv : 882548  (1532 per output)
+  sw/hw x100    : 90
+RESULT: PASS
+
+==== tb_soc summary (FAST_MUL=1, MEM_WAIT=1) ====
+  firmware: build/firmware.hex, 1908391 cycles to ebreak, 530 UART characters
+  software convolution: 802813 cycles (testbench window)
+    ROM fetch reads  152755 (avg 2.53 cyc)  writes       0 (avg 0.00 cyc)
+    ROM data  reads   28800 (avg 2.49 cyc)  writes       0 (avg 0.00 cyc)
+    RAM       reads       1 (avg 2.00 cyc)  writes     577 (avg 2.48 cyc)
+    UART      reads       0 (avg 0.00 cyc)  writes       1 (avg 2.00 cyc)
+    total bus transactions: 182134 (181556 reads, 578 writes)
+  hardware convolution: 882578 cycles (testbench window)
+    ROM fetch reads  166237 (avg 2.51 cyc)  writes       0 (avg 0.00 cyc)
+    ROM data  reads   14425 (avg 2.60 cyc)  writes       0 (avg 0.00 cyc)
+    RAM       reads   14401 (avg 2.37 cyc)  writes     602 (avg 2.02 cyc)
+    MAC       reads     576 (avg 2.00 cyc)  writes   14400 (avg 2.00 cyc)
+    UART      reads       0 (avg 0.00 cyc)  writes       1 (avg 2.00 cyc)
+    total bus transactions: 210642 (195639 reads, 15003 writes)
+  firmware rdcycle: sw=802789 hw=882548 (testbench windows 802813 / 882578)
+  MAC core latency SAMPLE accepted -> valid_o: min 3 max 3 cycles over 14405 samples
+  error responses: SLVERR 5 (expected 5), DECERR 1 (expected 1)
+METRIC fast_mul=1 mem_wait=1 sw_cycles=802789 hw_cycles=882548 mac_writes=14400 mac_reads=576
+SIM RESULT: PASS

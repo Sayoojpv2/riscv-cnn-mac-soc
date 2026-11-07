@@ -1,0 +1,24 @@
+# Yosys synthesis of the SoC logic. The ROM/RAM arrays (axil_mem) are read as black
+# boxes: on silicon they are SRAM macros, on an FPGA block RAM, so they are not mapped
+# to gates here. Run from the repository root: yosys -s scripts/synth.ys
+read_verilog -sv rtl/third_party/picorv32.v rtl/axil_slave.sv rtl/axil_decoder.sv \
+                 rtl/mac_opiso.sv rtl/mac_axil.sv rtl/uart_axil.sv rtl/soc_top.sv
+read_verilog -sv -lib rtl/axil_mem.sv
+hierarchy -check -top soc_top
+design -save elab
+
+# 1. technology-independent gates, hierarchy kept (per-module numbers)
+synth -top soc_top
+tee -q -o build/synth_generic.txt stat
+tee -q -o build/synth_generic.json stat -json
+
+# 2. AMD/Xilinx 7-series (Zynq-7000 fabric) resource estimate, whole SoC logic
+design -load elab
+synth_xilinx -family xc7 -top soc_top
+tee -q -o build/synth_xc7.txt stat
+tee -q -o build/synth_xc7.json stat -json
+
+# 3. the MAC peripheral alone on 7-series
+design -load elab
+synth_xilinx -family xc7 -top mac_axil
+tee -q -o build/synth_xc7_mac.json stat -json

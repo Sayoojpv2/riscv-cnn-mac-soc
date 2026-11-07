@@ -1,0 +1,275 @@
+
+13. Printing statistics.
+
+=== $paramod$4fa8aa52aa13065e3c508a8fccc96c9f740af56e\picorv32_axi ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       39 wires
+      487 wire bits
+       39 public wires
+      487 public wire bits
+       32 ports
+      384 port bits
+        2 submodules
+        1   $paramod$ff40f8c7c36da603fda8789f0917036b24500bf9\picorv32
+        1   picorv32_axi_adapter
+
+=== $paramod$d55483bbc8b50bec6beb4e4890bfa628e0a67c83\axil_decoder ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      110 wires
+      724 wire bits
+       41 public wires
+      443 public wire bits
+       36 ports
+      432 port bits
+      163 cells
+       11   FDRE
+        1   INV
+       32   LUT2
+       12   LUT3
+       54   LUT4
+       44   LUT5
+        9   LUT6
+
+=== $paramod$ff40f8c7c36da603fda8789f0917036b24500bf9\picorv32 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     1710 wires
+     4478 wire bits
+      125 public wires
+     1089 public wire bits
+       27 ports
+      409 port bits
+     1899 cells
+       95   CARRY4
+      599   FDRE
+        7   FDSE
+        8   INV
+      218   LUT2
+      135   LUT3
+      144   LUT4
+      480   LUT5
+      201   LUT6
+       12   RAM32M
+        2 submodules
+        1   picorv32_pcpi_div
+        1   picorv32_pcpi_fast_mul
+
+=== $paramod\axil_slave\AW=s32'00000000000000000000000000001100 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       51 wires
+      293 wire bits
+       37 public wires
+      269 public wire bits
+       30 ports
+      206 port bits
+      178 cells
+       99   FDRE
+        3   INV
+        6   LUT2
+       61   LUT3
+        1   LUT4
+        4   LUT5
+        4   LUT6
+
+=== $paramod\uart_axil\CLKS_PER_BIT=s32'00000000000000000000000000010000 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      116 wires
+      380 wire bits
+       30 public wires
+      260 public wire bits
+       20 ports
+      149 port bits
+      127 cells
+        2   CARRY4
+       40   FDRE
+        9   FDSE
+        7   INV
+       33   LUT2
+        9   LUT3
+       16   LUT4
+        7   LUT5
+        4   LUT6
+        1 submodules
+        1   $paramod\axil_slave\AW=s32'00000000000000000000000000001100
+
+=== mac_axil ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      125 wires
+      416 wire bits
+       31 public wires
+      255 public wire bits
+       19 ports
+      148 port bits
+      103 cells
+        4   CARRY4
+       24   FDRE
+        2   INV
+        4   LUT2
+        7   LUT3
+       28   LUT4
+       26   LUT5
+        8   LUT6
+        2 submodules
+        1   $paramod\axil_slave\AW=s32'00000000000000000000000000001100
+        1   mac_opiso
+
+=== mac_opiso ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      100 wires
+      249 wire bits
+       15 public wires
+       71 public wire bits
+        8 ports
+       45 port bits
+       77 cells
+        5   CARRY4
+        1   DSP48E1
+       27   FDRE
+        1   INV
+       20   LUT2
+        1   LUT4
+        2   LUT5
+       20   LUT6
+
+=== picorv32_axi_adapter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       38 wires
+      271 wire bits
+       30 public wires
+      257 public wire bits
+       26 ports
+      253 port bits
+       18 cells
+        4   FDRE
+        7   LUT2
+        3   LUT3
+        2   LUT4
+        2   LUT6
+
+=== picorv32_pcpi_div ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      640 wires
+     1385 wire bits
+       21 public wires
+      300 public wire bits
+       10 ports
+      134 port bits
+      603 cells
+       44   CARRY4
+      199   FDRE
+        1   FDSE
+      129   INV
+       48   LUT2
+       13   LUT3
+       17   LUT4
+       80   LUT5
+       72   LUT6
+
+=== picorv32_pcpi_fast_mul ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      407 wires
+      935 wire bits
+       15 public wires
+      267 public wire bits
+       10 ports
+      134 port bits
+      203 cells
+       12   CARRY4
+        4   DSP48E1
+       99   FDRE
+        1   INV
+       47   LUT2
+       35   LUT3
+        2   LUT4
+        2   LUT5
+        1   LUT6
+
+=== soc_top ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       45 wires
+      445 wire bits
+       40 public wires
+      440 public wire bits
+        4 ports
+        4 port bits
+        7 cells
+        1   BUFG
+        2   IBUF
+        2   OBUF
+        2   axil_mem
+        4 submodules
+        1   $paramod$4fa8aa52aa13065e3c508a8fccc96c9f740af56e\picorv32_axi
+        1   $paramod$d55483bbc8b50bec6beb4e4890bfa628e0a67c83\axil_decoder
+        1   $paramod\uart_axil\CLKS_PER_BIT=s32'00000000000000000000000000010000
+        1   mac_axil
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+     3556 soc_top
+     1899   $paramod$ff40f8c7c36da603fda8789f0917036b24500bf9\picorv32
+      603     picorv32_pcpi_div
+      203     picorv32_pcpi_fast_mul
+       18   picorv32_axi_adapter
+      163 $paramod$d55483bbc8b50bec6beb4e4890bfa628e0a67c83\axil_decoder
+      127 $paramod\uart_axil\CLKS_PER_BIT=s32'00000000000000000000000000010000
+      178   $paramod\axil_slave\AW=s32'00000000000000000000000000001100
+      103 mac_axil
+      178   $paramod\axil_slave\AW=s32'00000000000000000000000000001100
+       77   mac_opiso
+
+        +----------Count including submodules.
+        | 
+     3432 wires
+    10356 wire bits
+      461 public wires
+     4407 public wire bits
+      252 ports
+     2504 port bits
+        - memories
+        - memory bits
+        - processes
+     3556 cells
+        1   BUFG
+      162   CARRY4
+        5   DSP48E1
+     1201   FDRE
+       17   FDSE
+        2   IBUF
+      155   INV
+      421   LUT2
+      336   LUT3
+      266   LUT4
+      649   LUT5
+      325   LUT6
+        2   OBUF
+       12   RAM32M
+        2   axil_mem
+        4 submodules
+        1   $paramod$4fa8aa52aa13065e3c508a8fccc96c9f740af56e\picorv32_axi
+        1   $paramod$d55483bbc8b50bec6beb4e4890bfa628e0a67c83\axil_decoder
+        1   $paramod\uart_axil\CLKS_PER_BIT=s32'00000000000000000000000000010000
+        1   mac_axil
+
