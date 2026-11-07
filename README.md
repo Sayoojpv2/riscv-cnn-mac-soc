@@ -182,6 +182,9 @@ All numbers are from the simulation logs in [`results/`](results/); see [RESULTS
   | iterative multiplier | 1,203,142 | 783,716 | 1.54 |
   | fast multiplier + memory wait states | 802,789 | 882,548 | 0.91 |
 
+  (GCC 16.1. With CI's GCC 13.2 the software cycle count is identical but the accelerator
+  loop takes 841,338 cycles, a ratio of 0.85 / 1.43. That loop is limited by CPU code.)
+
 * **The accelerator only pays off when the CPU multiplier is slow.** Each accelerated MAC
   needs a load, packing and an MMIO store (9 instructions, ~54 cycles) versus 8 instructions
   for `lh/lb/mul/add` in software. Communication, not arithmetic, dominates: the MAC core is

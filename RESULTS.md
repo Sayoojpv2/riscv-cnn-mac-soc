@@ -79,6 +79,22 @@ When the CPU multiplier is iterative, each `mul` costs 34 more cycles ((1,203,14
 which has no `mul`, is unchanged. That gives the 1.54× speed-up. Wait states slow both versions
 by about 12 % and leave the ratio unchanged, because both are fetch/bus bound.
 
+### Compiler sensitivity (GitHub Actions run 42359714867)
+
+CI builds the same firmware with Ubuntu's GCC 13.2.0 and simulates with Icarus Verilog 12.0.
+All tests pass there too, and synthesis gives identical numbers. The cycle counts:
+
+| CPU configuration | software (GCC 13.2) | accelerator (GCC 13.2) | software ÷ accelerator |
+|---|---:|---:|---:|
+| fast mul | 713,542 | 841,338 | 0.85 |
+| iterative mul | 1,203,142 | 841,338 | 1.43 |
+| fast mul + wait states | 802,809 | 941,732 | 0.85 |
+
+The software loop compiles to the same cycle count with both compilers. The accelerator loop
+is 7.4 % slower with GCC 13.2 (841,338 vs 783,716). The per-MAC packing and MMIO store
+sequence is sensitive to code generation, which is another sign that the accelerated path is
+limited by CPU-side overhead.
+
 So for this SoC the gain depends on the interface, not on the MAC. Fewer bus transactions per
 MAC would be needed: weights held in the peripheral (only activations streamed), several
 activations packed per write, or DMA from memory. These were not implemented, to keep the

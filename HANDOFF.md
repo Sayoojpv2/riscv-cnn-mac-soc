@@ -37,8 +37,8 @@ make synth YOSYS=yowasp-yosys PYTHON=python
 ```
 
 ## GitHub
-`Sayoojpv2/riscv-cnn-mac-soc`: created private, pushed, made public after CI passed
-(see the status line below if this step was interrupted).
+`Sayoojpv2/riscv-cnn-mac-soc`: created private, pushed, CI run 42359714867 passed (Icarus 12,
+GCC 13.2), then made public. CI accelerator cycles differ from local GCC 16.1 (see RESULTS.md).
 
 ## Possible next steps (not started)
 - Lower-overhead accelerator interface (weights stored in the peripheral, packed activations,
